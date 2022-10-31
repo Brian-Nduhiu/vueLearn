@@ -20,17 +20,17 @@
 
 //Composition API
 
-import { ref } from 'vue';
-export default {
+// import { ref } from 'vue';
+// export default {
 
-    setup() {
-        const count = ref(0);
-        return {
-            count
-        };
-    },
-    mounted() {
-        console.log(`The value of count is: ${this.count}`);
-    },
-    template: /*html*/`<button @click="count++">Count is {{count}}</button>`
-};
+//     setup() {
+//         const count = ref(0);
+//         return {
+//             count
+//         };
+//     },
+//     mounted() {
+//         console.log(`The initial value of count is: ${this.count}`);
+//     },
+//     template: /*html*/`<button @click="count++">Count is {{count}}</button>`
+// };
