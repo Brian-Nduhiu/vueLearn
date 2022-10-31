@@ -1,16 +1,36 @@
+
+//Options API
+
+// export default {
+//     data() {
+//         return {
+//             count: 0
+//         };
+//     },
+//     methods: {
+//         increment() {
+//             this.count++;
+//         }
+//     },
+//     mounted() {
+//         console.log(`The initial count value is ${count}`);
+//     },
+//     template: /*html*/`<button @click="increment">Count is {{count}}</button>`
+// };
+
+//Composition API
+
+import { ref } from 'vue';
 export default {
-    data() {
+
+    setup() {
+        const count = ref(0);
         return {
-            count: 0
+            count
         };
     },
-    methods: {
-        increment() {
-            this.count++;
-        }
-    },
     mounted() {
-        console.log(`The initial count value is ${count}`);
+        console.log(`The value of count is: ${this.count}`);
     },
-    template: /*html*/`<button @click="increment">Count is {{count}}</button>`
+    template: /*html*/`<button @click="count++">Count is {{count}}</button>`
 };
