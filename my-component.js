@@ -1,8 +1,16 @@
 export default {
     data() {
         return {
-            name: 'Welcome to Vue Learner'
+            count: 0
         };
     },
-    template: /*html*/`<h1>{{name}}<h1/>`
+    methods: {
+        increment() {
+            this.count++;
+        }
+    },
+    mounted() {
+        console.log(`The initial count value is ${count}`);
+    },
+    template: /*html*/`<button @click="increment">Count is {{count}}</button>`
 };
