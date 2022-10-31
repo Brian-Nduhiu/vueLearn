@@ -11,6 +11,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <style>
       button{
         width: 300px;
@@ -18,14 +20,37 @@
         background-color: wheat;
         border-radius: 10px;
       }
+      p{
+        font-family: 'Courier New', Courier, monospace;
+        font-weight:800;
+        font-size:30px ;
+      }
+      .crimson{
+        color: crimson;
+      }
+      #alert{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .alertClass{
+        color: rgb(14, 64, 138);
+      }
     </style>
+
+
+
+
     <title>VueLearn</title>
 </head>
 <body>
     
     
-    <div id="app" >
+    <div id="app">
       <button @click="count++">Number {{count}}</button>
+      <p>{{msg}}</p>
+      <p>Msg using HTML interpolation: <span v-html="msg" :class="dangerClass"></span> </p>
+      <p v-bind="alertAtt">Dynamically binding multiple attributes</p>
+      <p v-if="count%2==0 && count != 0">Count is an even number</p>
+    
     </div>
 
 
@@ -38,13 +63,20 @@
 
       //  createApp(myComponent).mount('#app')
 
-
+ 
 
       import {createApp} from 'vue'
       createApp({
         data(){
           return{
             count : 0,
+            msg: "Welcome to Utopia",
+            dangerClass: "crimson",
+            alertAtt:{
+              id:'alert',
+              class:'alertClass',
+              
+            },
 
           }
         }
