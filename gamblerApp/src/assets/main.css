@@ -1,35 +1,47 @@
-@import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
 
-  font-weight: normal;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.intro{
+  font-family: 'Dancing Script', cursive;
+  font-size: 35px;
 }
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.instructions{
+  font-family: 'Raleway', sans-serif;
 }
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+button{
+  width: 70px;
+  height: 70px;
+}   
+.win{
+  background-color: rgb(255, 217, 0);
+  color: rgb(0, 0, 0);
+  border: none;
+  font-family: 'Griffy', cursive;
+  font-weight: 900;
+  font-size: 30px;
+}
+.lose{
+  background-color: rgb(255, 4, 45);
+  color: rgb(0, 0, 0);
+  border: none;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-weight: 900;
+  font-size: 30px;
+}
+.results{
+  font-family: 'Fasthand', cursive;
+  font-size: 65px;
+  
 }
