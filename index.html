@@ -45,7 +45,7 @@
     
     
     <div id="app">
-      <button @click="count++">Number {{count}}</button>
+      <button @click="randNum">Number {{count}}</button>
       <p>{{msg}}</p>
       <p>Msg using HTML interpolation: <span v-html="msg" :class="dangerClass"></span> </p>
       <p v-bind="alertAtt">Dynamically binding multiple attributes</p>
@@ -79,6 +79,12 @@
             },
 
           }
+        },
+        methods:{
+          randNum(){this.count = Math.floor(Math.random()*10)+1}
+        },
+        mounted(){
+          console.log(`Original Count value: ${this.count}`);
         }
 
       }).mount('#app')
