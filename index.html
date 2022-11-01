@@ -34,6 +34,18 @@
       .alertClass{
         color: rgb(14, 64, 138);
       }
+      .even{
+        background-color: rgb(243, 165, 165);
+      }
+      .odd{
+        background-color: rgb(123, 235, 235);
+      }
+      .robotFont{
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .robotColor{
+        color: rgb(148, 123, 10);
+      }
     </style>
 
 
@@ -44,9 +56,12 @@
 <body>
     
     
-    <div id="app">
+    <div id="app" v-cloak>
 
-      <button @click="randNum">Number {{count}}</button>
+      <button @click="randNum" :class="{
+        'even': evenCheck == 'even',
+        'odd': evenCheck == 'odd'
+      }">Number {{count}}</button>
 
       <p>{{msg}}</p>
 
@@ -54,9 +69,11 @@
 
       <p v-bind="alertAtt">Dynamically binding multiple attributes</p>
 
-      <p v-if="count%2==0 && count != 0">Count is an even number</p>
-
       <p>Has {{author.name}} published any books? {{publishedBookCheck}}</p>
+
+      <p :class="[isEven=='even'?dangerClass:newColor,newFont]">Binding to Arrays</p>
+
+      <p v-if="count%2==0 && count != 0">Count is an even number</p>
     
     </div>
 
@@ -90,16 +107,23 @@
                 'Vue 3 - Basic Guide',
                 'Vue 4 - The Mystery'
               ]
-            }
+            },
+            isEven: 'even',
+            newFont: 'robotFont',
+            newColor: 'robotColor'
+
 
           }
         },
         methods:{
-          randNum(){this.count = Math.floor(Math.random()*10)+1}
+          randNum(){this.count = Math.floor(Math.random()*10)+1},
         },
         computed:{
           publishedBookCheck(){
             return this.author.books.length > 0 ? 'Yes': 'No'
+          },
+          evenCheck(){
+            return this.count%2==0 && this.count!=0 ? this.isEven='even': this.isEven='odd'
           }
         },
         mounted(){
