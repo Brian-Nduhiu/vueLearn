@@ -1,5 +1,5 @@
 <template>
-<div class="buttons">
+<div class="buttons buttonsContainer">
 
 <button >7</button>
 <button >2</button>

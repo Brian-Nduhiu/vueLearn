@@ -8,8 +8,11 @@ import Results from "./components/Results.vue";
 </script>
 
 <template>
-  <Intro/>
+  <div class="container">
+    <Intro/>
   <Instructions/>
   <Buttons/>
   <Results/>
+  </div>
+  
 </template>
