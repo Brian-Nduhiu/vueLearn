@@ -54,18 +54,22 @@ export default {
         },
         playGame(){
             this.numberGenerator();
+            this.compareNum
 
+        },
+        compareNum(){
+            const userNums = this.luckyPick1 + "" + this.luckyPick2 + "" + this.luckyPick3
+            const genNums = this.generatedNum1 + "" + this.generatedNum2 + "" + this.generatedNum3
 
+            this.hasWon = (userNums == genNums)
         }
     },
     computed:{  
-        referee(){
-            const userNums = [this.luckyPick1,this.luckyPick2,this.luckyPick3].sort
-            const generatedList = [this.generatedNum1,this.generatedNum2,this.generatedNum3].sort
-            console.log(JSON.stringify(userNums))
-            console.log(JSON.stringify(generatedList))
-            return JSON.stringify(userNums) === JSON.stringify(generatedList)
-        }
+        // referee(){
+        //     const userNums = [this.luckyPick1,this.luckyPick2,this.luckyPick3].sort
+        //     const generatedList = [this.generatedNum1,this.generatedNum2,this.generatedNum3].sort
+        //     return JSON.stringify(userNums) === JSON.stringify(generatedList)
+        // }
     }
 }
 
