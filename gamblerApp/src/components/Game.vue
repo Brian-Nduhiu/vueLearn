@@ -1,8 +1,12 @@
-<script setup>
+<script>
 import Buttons from "./Buttons.vue";
 import Results from "./Results.vue";
 
 export default {
+    components:{
+        Buttons,
+        Results
+    },
     props:{
         luckyPick1:{
             type:Number
