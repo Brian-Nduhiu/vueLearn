@@ -4,23 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Griffy&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
     <style>
-        
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.buttonsContainer{
+  display: flex;  
+  justify-content: space-between;
+  width: 20em;
+
+}
+.intro{
+  font-family: 'Dancing Script', cursive;
+  font-size: 35px;
+}
+.numPickText{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: larger;
+}
+.instructions{
+  font-family: 'Raleway', sans-serif;
+}
+.instructions span{
+    
+    font-size: larger;
+    font-weight: bolder;
+}
+.buttonResults{
+  width: 70px;
+  height: 70px;
+}   
+.win{
+  background-color: rgb(255, 217, 0);
+  color: rgb(0, 0, 0);
+  border: none;
+  font-family: 'Griffy', cursive;
+  font-weight: 900;
+  font-size: 30px;
+}
+.lose{
+  background-color: rgb(255, 4, 45);
+  color: rgb(0, 0, 0);
+  border: none;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-weight: 900;
+  font-size: 30px;
+}
+.results{
+  font-family: 'Fasthand', cursive;
+  font-size: 65px;
+  
+}
     </style>
     <title>Vegas</title>
 </head>
@@ -29,15 +73,24 @@
 
     <div class="container">
 
-        <h2 class="intro">Welcome to Vegas casino, get all 7s and win big!!!!!</h2>
+        <h2 class="intro">Vegas Casino</h2>
 
-        <p class="instructions">Click the buttons to reveal the numbers</p>
+
+        <p class="numPickText">What are your 3 lucky numbers? (0-9)</p>
+        <form>
+            <input type="number" name="lucky1" id="lucky1" min="0" max="9" required>
+            <input type="number" name="lucky2" id="lucky2" min="0" max="9" required>
+            <input type="number" name="lucky3" id="lucky3" min="0" max="9" required>
+            <button type="submit">Play</button>
+        </form>
+
+        <p class="instructions">Click <span>Play</span> to reveal the numbers</p>
 
         <div class="buttons">
 
-            <button >7</button>
-            <button >2</button>
-            <button >9</button>
+            <button class="buttonResults">7</button>
+            <button class="buttonResults">2</button>
+            <button class="buttonResults">9</button>
 
         </div>
 
