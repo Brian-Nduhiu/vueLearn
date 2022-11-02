@@ -14,8 +14,14 @@
 .buttonsContainer{
   display: flex;  
   justify-content: space-between;
-  width: 17em;
+  width: 14em;
 
+}
+.game{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .pregame{
   margin-bottom: 20px;
