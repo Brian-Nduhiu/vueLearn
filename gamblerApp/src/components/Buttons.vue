@@ -1,16 +1,17 @@
 <script>
 
 export default{
-    props:['luckyPick1', 'luckyPick2', 'luckyPick3'],
+    props:['generatedNum1','generatedNum2','generatedNum3'],
 }
+
 </script>
 
 <template>
 <div class="buttons buttonsContainer">
 
-<button class="buttonResults">{{luckyPick1}}</button>
-<button class="buttonResults">{{luckyPick2}}</button>
-<button class="buttonResults">{{luckyPick3}}</button>
+<button class="buttonResults">{{generatedNum1}}</button>
+<button class="buttonResults">{{generatedNum2}}</button>
+<button class="buttonResults">{{generatedNum3}}</button>
 
 </div>
 </template>

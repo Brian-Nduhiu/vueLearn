@@ -27,10 +27,31 @@ export default {
         generatedNum3:{
             type:Number
         },
+        hasWon:{
+            type:Boolean
+        },
+        hasPlayed:{
+            type:Boolean
+        }
+
+
         
     },
-    computed:{
-        
+    methods:{
+        numberGenerator(){
+            
+
+        }
+    },
+    computed:{  
+        referee(){
+            const userNums = [this.luckyPick1,this.luckyPick2,this.luckyPick3].sort
+            this.generatedNum1=Math.floor(Math.random() * 10);
+            this.generatedNum2=Math.floor(Math.random() * 10);
+            this.generatedNum3=Math.floor(Math.random() * 10);
+            const generatedList = [this.generatedNum1,this.generatedNum2,this.generatedNum3].sort
+            this.hasWon = JSON.stringify(userNums) === JSON.stringify(generatedList)
+        }
     }
 }
 
@@ -49,8 +70,8 @@ export default {
         </form>
         <p class="instructions">Click <span>Play</span> to reveal the numbers</p>
     </div>
-    <Buttons :luckyPick1="9" :luckyPick2="1" :luckyPick3="7"/>  
-    <Results/>
+    <Buttons :generatedNum1='this.luckyPick1' :generatedNum2='this.generatedNum2' :generatedNum3='this.generatedNum1'/>  
+    <Results :hasWon="this.hasWon"/>
     </div>
     
     
