@@ -39,8 +39,11 @@ export default {
     },
     methods:{
         numberGenerator(){
+            let num = Math.floor(Math.random() * 10);
+            return num
+        },
+        playGame(){
             
-
         }
     },
     computed:{  
