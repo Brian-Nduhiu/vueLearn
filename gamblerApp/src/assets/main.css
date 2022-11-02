@@ -1,11 +1,9 @@
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Raleway:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
 
 .container{
   display: flex;
@@ -23,10 +21,22 @@
   font-family: 'Dancing Script', cursive;
   font-size: 35px;
 }
+.numPickText{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: larger;
+}
 .instructions{
   font-family: 'Raleway', sans-serif;
 }
-button{
+.instructions span{
+    
+    font-size: larger;
+    font-weight: bolder;
+}
+.pregameInput{
+ margin-right: 5px;
+}
+.buttonResults{
   width: 70px;
   height: 70px;
 }   
@@ -49,5 +59,4 @@ button{
 .results{
   font-family: 'Fasthand', cursive;
   font-size: 65px;
-  
 }

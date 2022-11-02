@@ -1,3 +1,3 @@
 <template>
-    <h2 class="intro">Welcome to Vegas casino, get all 7s and win big!!!!!</h2>
+    <h2 class="intro">Vegas Casino</h2>
 </template>
