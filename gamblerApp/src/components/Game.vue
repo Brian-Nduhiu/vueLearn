@@ -7,6 +7,15 @@ export default {
         Buttons,
         Results
     },
+    data(){
+        return {
+            generatedNum1: "",
+            generatedNum2: "",
+            generatedNum3: "",
+            numGenerated: false,
+            hasWon: false
+        }
+    },
     props:{
         luckyPick1:{
             type:Number
@@ -15,16 +24,6 @@ export default {
             type:Number
         },
         luckyPick3:{
-            type:Number
-        },
-        generatedNum1:{
-            type:Number,
-            default:null
-        },
-        generatedNum2:{
-            type:Number
-        },
-        generatedNum3:{
             type:Number
         },
         hasWon:{
@@ -39,21 +38,33 @@ export default {
     },
     methods:{
         numberGenerator(){
-            let num = Math.floor(Math.random() * 10);
-            return num
+            let num = Math.floor(Math.random() * 1000).toString();
+            if(num.length != 3){
+                let i = num.length
+                while(i <= 3){
+                    num = "0" + num
+                    i++;
+                }
+            }
+           
+            const numArr = num.split("")
+            this.generatedNum1 = numArr[0]
+            this.generatedNum2 = numArr[1],
+            this.generatedNum3 = numArr[2]
         },
         playGame(){
-            
+            this.numberGenerator();
+
+
         }
     },
     computed:{  
         referee(){
             const userNums = [this.luckyPick1,this.luckyPick2,this.luckyPick3].sort
-            this.generatedNum1=Math.floor(Math.random() * 10);
-            this.generatedNum2=Math.floor(Math.random() * 10);
-            this.generatedNum3=Math.floor(Math.random() * 10);
             const generatedList = [this.generatedNum1,this.generatedNum2,this.generatedNum3].sort
-            this.hasWon = JSON.stringify(userNums) === JSON.stringify(generatedList)
+            console.log(JSON.stringify(userNums))
+            console.log(JSON.stringify(generatedList))
+            return JSON.stringify(userNums) === JSON.stringify(generatedList)
         }
     }
 }
@@ -69,12 +80,12 @@ export default {
             <input v-model="luckyPick1" type="number" name="lucky1" id="lucky1" min="0" max="9" class="pregameInput" required>
             <input v-model="luckyPick2" type="number" name="lucky2" id="lucky2" min="0" max="9" class="pregameInput" required>
             <input v-model="luckyPick3" type="number" name="lucky3" id="lucky3" min="0" max="9" class="pregameInput" required>
-            <button type="submit" class="pregameInput">Play</button>
+            <button @click="playGame" type="button" class="pregameInput">Play</button>
         </form>
         <p class="instructions">Click <span>Play</span> to reveal the numbers</p>
     </div>
-    <Buttons :generatedNum1='this.luckyPick1' :generatedNum2='this.generatedNum2' :generatedNum3='this.generatedNum1'/>  
-    <Results :hasWon="this.hasWon"/>
+    <Buttons :generatedNum1='this.generatedNum1' :generatedNum2='this.generatedNum2' :generatedNum3='this.generatedNum1'/>  
+    <Results :hasWon="referee"/>
     </div>
     
     
