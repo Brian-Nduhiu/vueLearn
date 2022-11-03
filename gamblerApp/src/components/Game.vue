@@ -13,7 +13,8 @@ export default {
             generatedNum2: "",
             generatedNum3: "",
             numGenerated: false,
-            hasWon: false
+            hasPlayed: false
+            
         }
     },
     props:{
@@ -29,9 +30,7 @@ export default {
         hasWon:{
             type:Boolean
         },
-        hasPlayed:{
-            type:Boolean
-        }
+        
 
 
         
@@ -39,12 +38,8 @@ export default {
     methods:{
         numberGenerator(){
             let num = Math.floor(Math.random() * 1000).toString();
-            if(num.length != 3){
-                let i = num.length
-                while(i <= 3){
-                    num = "0" + num
-                    i++;
-                }
+            while(num.length < 3){
+                num = Math.floor(Math.random() * 10).toString() + num
             }
            
             const numArr = num.split("")
@@ -52,16 +47,18 @@ export default {
             this.generatedNum2 = numArr[1],
             this.generatedNum3 = numArr[2]
         },
+        compareNum(){
+            const userNums = this.luckyPick1.toString() + this.luckyPick2.toString() + this.luckyPick3.toString()
+            const genNums = this.generatedNum1  + this.generatedNum2 + this.generatedNum3
+            this.hasWon = (userNums === genNums)
+            this.hasPlayed= true;
+        },
         playGame(){
             this.numberGenerator();
-            this.compareNum
+            this.compareNum();
+            
+            
 
-        },
-        compareNum(){
-            const userNums = this.luckyPick1 + "" + this.luckyPick2 + "" + this.luckyPick3
-            const genNums = this.generatedNum1 + "" + this.generatedNum2 + "" + this.generatedNum3
-
-            this.hasWon = (userNums == genNums)
         }
     },
     computed:{  
@@ -89,7 +86,7 @@ export default {
         <p class="instructions">Click <span>Play</span> to reveal the numbers</p>
     </div>
     <Buttons :generatedNum1='this.generatedNum1' :generatedNum2='this.generatedNum2' :generatedNum3='this.generatedNum1'/>  
-    <Results :hasWon="referee"/>
+    <Results :hasWon='this.hasWon' v-if="hasPlayed"/>
     </div>
     
     

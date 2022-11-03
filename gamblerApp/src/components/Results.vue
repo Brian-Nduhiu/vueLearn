@@ -13,6 +13,9 @@ export default{
 </script>
 
 <template>
-    <h1 class="results" v-if="hasWon">{{wonMessage}}</h1>
-    <h1 class="results" v-else>{{lossMessage}}</h1>
+
+        <h1 class="results" v-if="hasWon">{{wonMessage}}</h1>
+        <h1 class="results" v-else>{{lossMessage}}</h1>
+    
+    
 </template>
