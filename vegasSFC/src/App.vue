@@ -6,7 +6,9 @@ export default{
         return {
             userInput:[],
             generatedNums:[],
-            // winCheck:[]
+            winCheck:[],
+            hasWon:null,
+            resultsMessage:["Congratulations!!!!!!!", "Sorry you lost"]
 
         }
   },
@@ -21,19 +23,25 @@ export default{
       console.log(`Generated Nums -- ${this.generatedNums}`);
 
   },
-    // resultsChecker(){
-    //   for (let num = 0; num < 3; num++) {
-    //     if(this.userInput[num] == this.generatedNums[num]){
-    //       winCheck[num] = true
-    //     }
-    //     else{
-    //       this.winCheck[num] = false
-    //     }
+    resultsChecker(){
+      for (let num = 0; num < 3; num++) {
+        if(this.userInput[num] == this.generatedNums[num]){
+          this.winCheck[num] = true
+        }
+        else{
+          this.winCheck[num] = false
+        }
         
-    //   }
+      }
 
+      if(this.winCheck.includes(false)){
+        this.hasWon = false
+      }
+      else{
+        this.hasWon = true
+      }
 
-    // }
+    }
 
 
   
@@ -52,7 +60,7 @@ export default{
     <input v-model="userInput[0]" type="number" name="lucky1" id="lucky1" class="input" min="0" max="9" required>
     <input v-model="userInput[1]" type="number" name="lucky2" id="lucky2" class="input" min="0" max="9" required>
     <input v-model="userInput[2]" type="number" name="lucky3" id="lucky3" class="input" min="0" max="9" required>
-    <button type="button" @click="logCalls(); generator()" class="input">Play</button>
+    <button type="button" @click="logCalls(); generator(); resultsChecker()" class="input">Play</button>
 </form>
 
 <p class="instructions">Click <span>Play</span> to reveal the numbers</p>
@@ -65,7 +73,8 @@ export default{
 
 </div>
 
-<h1 class="results">Congratulations!!!!!!!!!!!</h1>
+<h1 class="results" v-if="hasWon">{{resultsMessage[0]}}</h1>
+<h1 class="results" v-else-if="hasWon == false && hasWon != null">{{resultsMessage[1]}}</h1>
 
 </div>
   
