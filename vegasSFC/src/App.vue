@@ -1,31 +1,43 @@
 
 <script>
-// import RandomOrg from 'random-org';
 export default{
+  
   data(){
         return {
-            userInput:[]
-            
+            userInput:[],
+            generatedNums:[],
+            // winCheck:[]
+
         }
   },
   methods:{ 
     logCalls(){
-      console.log(this.userInput);
+      console.log(`User Input -- ${this.userInput}`);
     },
-    //Tester Method
-    // logTest(){
-    //   console.log("Hello Jamal");
-    // }
-  //   generator(){
-  //     var random = new RandomOrg({ apiKey: 'a8abb2e3-48bb-4ca2-a03b-a9aa9dece257' });
-  //     random.generateIntegers({ min: 0, max: 9, n: 3 })
-  //     .then(function(result) {
-  //     console.log(result.random.data); // [55, 3]
-  // }
-  // );
-  // }
+    generator(){
+      for (let num = 0; num < 3; num++) {
+        this.generatedNums[num] = Math.floor(Math.random() * 10);
+      }
+      console.log(`Generated Nums -- ${this.generatedNums}`);
+
   },
+    // resultsChecker(){
+    //   for (let num = 0; num < 3; num++) {
+    //     if(this.userInput[num] == this.generatedNums[num]){
+    //       winCheck[num] = true
+    //     }
+    //     else{
+    //       this.winCheck[num] = false
+    //     }
+        
+    //   }
+
+
+    // }
+
+
   
+}
 }
 </script>
 
@@ -40,16 +52,16 @@ export default{
     <input v-model="userInput[0]" type="number" name="lucky1" id="lucky1" class="input" min="0" max="9" required>
     <input v-model="userInput[1]" type="number" name="lucky2" id="lucky2" class="input" min="0" max="9" required>
     <input v-model="userInput[2]" type="number" name="lucky3" id="lucky3" class="input" min="0" max="9" required>
-    <button type="button" @click="logCalls();" class="input">Play</button>
+    <button type="button" @click="logCalls(); generator()" class="input">Play</button>
 </form>
 
 <p class="instructions">Click <span>Play</span> to reveal the numbers</p>
 
 <div class="buttons">
 
-    <button class="buttonResults win">1</button>
-    <button class="buttonResults lose">2</button>
-    <button class="buttonResults">9</button>
+    <button class="buttonResults ">{{generatedNums[0]}}</button>
+    <button class="buttonResults ">{{generatedNums[1]}}</button>
+    <button class="buttonResults ">{{generatedNums[2]}}</button>
 
 </div>
 
