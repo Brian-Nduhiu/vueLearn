@@ -8,7 +8,8 @@ export default{
             generatedNums:[],
             winCheck:[],
             hasWon:null,
-            resultsMessage:["Congratulations!!!!!!!", "Sorry you lost"]
+            resultsMessage:["Congratulations!!!!!!!", "Sorry you lost"],
+            
 
         }
   },
