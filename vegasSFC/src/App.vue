@@ -24,6 +24,7 @@ export default{
       for (let num = 0; num < 3; num++) {
         this.generatedNums[num] = Math.floor(Math.random() * 10);
       }
+      // this.generatedNums = [0,0,0] // Congratulations test
       console.log(`Generated Nums -- ${this.generatedNums}`);
 
   },
