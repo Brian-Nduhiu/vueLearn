@@ -13,9 +13,13 @@ export default{
         }
   },
   methods:{ 
+
+    // Logs out the input from the user stored in userInput[]
     logCalls(){
       console.log(`User Input -- ${this.userInput}`);
     },
+
+    //Generates 3 random numbers and stores them in generatedNums[]
     generator(){
       for (let num = 0; num < 3; num++) {
         this.generatedNums[num] = Math.floor(Math.random() * 10);
@@ -23,10 +27,12 @@ export default{
       console.log(`Generated Nums -- ${this.generatedNums}`);
 
   },
+
+  //Checks for the equality of the user generated numbers & the computer generated numbers
     resultsChecker(){
       for (let num = 0; num < 3; num++) {
         if(this.userInput[num] == this.generatedNums[num]){
-          this.winCheck[num] = true
+          this.winCheck[num] = true //checks equality on the individual positions of the arrays
         }
         else{
           this.winCheck[num] = false
