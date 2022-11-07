@@ -1,0 +1,67 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.buttonsContainer{
+  display: flex;  
+  justify-content: space-between;
+  width: 20em;
+
+}
+.intro{
+  font-family: 'Dancing Script', cursive;
+  font-size: 35px;
+}
+.numPickText{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: larger;
+}
+
+.input{
+  margin-right: 10px;
+}
+.instructions{
+  font-family: 'Raleway', sans-serif;
+}
+.instructions span{
+    
+    font-size: larger;
+    font-weight: bolder;
+}
+.buttonResults{
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+}   
+.win{
+  background-color: rgb(255, 217, 0);
+  color: rgb(0, 0, 0);
+  border: none;
+  /* font-family: 'Griffy', cursive; */
+  /* font-weight: 900;
+  font-size: 30px; */
+}
+.lose{
+  background-color: rgb(255, 4, 45);
+  color: rgb(0, 0, 0);
+  border: none;
+  /* font-family: 'Noto Nastaliq Urdu', serif; */
+  /* font-weight: bold; */
+  /* font-size: large; */
+}
+.results{
+  font-family: 'Fasthand', cursive;
+  font-size: 65px;
+  
+}
