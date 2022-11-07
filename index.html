@@ -58,10 +58,10 @@
     
     <div id="app" v-cloak>
 
-      <button @click="randNum" :class="{
-        'even': evenCheck == 'even',
-        'odd': evenCheck == 'odd'
-      }">Number {{count}}</button>
+      <button @click="randNum" :class="{ 
+        'even': evenCheck == 'even', //assignes a class attribute to button depending on whether evenCheck is equal to even or odd
+        'odd': evenCheck == 'odd',
+      } " class="robotColor">Number {{count}}</button>
 
       <p>{{msg}}</p>
 
@@ -123,7 +123,7 @@
             return this.author.books.length > 0 ? 'Yes': 'No'
           },
           evenCheck(){
-            return this.count%2==0 && this.count!=0 ? this.isEven='even': this.isEven='odd'
+            return this.count%2==0 && this.count!=0 ? this.isEven='even': this.isEven='odd'  //toggles isEven between true & false depending on if count is an odd number or even number
           }
         },
         mounted(){
