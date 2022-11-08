@@ -7,9 +7,9 @@ import Results from './components/Results.vue'
 export default {
   components:{
     Logo,
-    // UserPlay,
-    // Generator,
-    // Results
+    UserPlay,
+    Generator,
+    Results
   }
   
   }
@@ -18,7 +18,9 @@ export default {
 <template>
   <div class="container">
     <Logo/>
-   
+   <UserPlay/>
+   <Generator/>
+   <Results/>
   </div>
 </template>
 
