@@ -5,8 +5,16 @@ import Generator from './components/Generator.vue'
 import Results from './components/Results.vue'
 
 export default {
-  data(){
-    test:"Hello Jamal"
+  data() {
+    return {
+      message: 'hello!'
+    }
+  },
+  provide() {
+    // use function syntax so that we can access `this`
+    return {
+      message: this.message
+    }
   },
   
   components:{
@@ -14,11 +22,6 @@ export default {
     UserPlay,
     Generator,
     Results
-  },
-  provide(){
-    return{
-      test: "Hello this is Jamal"
-    }
   },
   
   }
