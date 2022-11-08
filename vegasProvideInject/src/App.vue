@@ -5,12 +5,21 @@ import Generator from './components/Generator.vue'
 import Results from './components/Results.vue'
 
 export default {
+  data(){
+    test:"Hello Jamal"
+  },
+  
   components:{
     Logo,
     UserPlay,
     Generator,
     Results
-  }
+  },
+  provide(){
+    return{
+      test: "Hello this is Jamal"
+    }
+  },
   
   }
 </script>
