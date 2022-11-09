@@ -1,7 +1,7 @@
 <template>
   <div>
     
-    <nav class="flex flex-row">
+    <nav class="flex flex-row justify-between bg-green-300 text-cyan-900 dark:bg-green-900 dark:text-cyan-50">
       <p>Vegas Casino</p>
       <label  class="switch ">
     <input @click="toggleDark()" type="checkbox">
