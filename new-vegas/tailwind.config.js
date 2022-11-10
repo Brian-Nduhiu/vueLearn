@@ -5,7 +5,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        dancingScript: 'Dancing Script'
+        dancingScript: 'Dancing Script',
+        abril: 'Abril Fatface',
+        signika: 'Signika',
       }
     },
   },

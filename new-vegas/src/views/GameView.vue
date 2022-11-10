@@ -1,7 +1,10 @@
 <template>
   <div>
     
-    <nav class="flex flex-row justify-between bg-green-300 text-cyan-900 dark:bg-green-900 dark:text-cyan-50 h-20 items-center">
+
+
+    <!--Nav Bar-->
+    <nav class="flex flex-row justify-between bg-green-900 text-cyan-50 dark:bg-black dark:text-cyan-50 h-20 items-center">
 
       <i class="fa-solid fa-vault ml-10"></i>
       <p class="font-dancingScript text-3xl">Vegas Casino</p>
@@ -10,12 +13,15 @@
     <span class="slider round"></span>
     </label>
     </nav>
+
+    <UserInput/>
     
   </div>
 </template>
 
 <script setup>
 import {useDark,useToggle} from '@vueuse/core'
+import UserInput from '@/components/UserInput.vue'
 
 
 const isDark = useDark()
@@ -48,7 +54,7 @@ const toggleDark = useToggle(isDark)
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgb(190, 184, 184);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -70,7 +76,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #000000;
+  box-shadow: 0 0 1px rgb(190, 184, 184);
 }
 
 input:checked + .slider:before {
@@ -81,11 +87,11 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 15px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+  border-radius: 15px;
 }
 
 </style>
