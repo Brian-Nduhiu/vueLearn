@@ -1,9 +1,11 @@
 <template>
   <div>
     
-    <nav class="flex flex-row justify-between bg-green-300 text-cyan-900 dark:bg-green-900 dark:text-cyan-50">
-      <p>Vegas Casino</p>
-      <label  class="switch ">
+    <nav class="flex flex-row justify-between bg-green-300 text-cyan-900 dark:bg-green-900 dark:text-cyan-50 h-20 items-center">
+
+      <i class="fa-solid fa-vault ml-10"></i>
+      <p class="font-dancingScript text-3xl">Vegas Casino</p>
+      <label  class="switch mr-10">
     <input @click="toggleDark()" type="checkbox">
     <span class="slider round"></span>
     </label>
@@ -28,7 +30,7 @@ const toggleDark = useToggle(isDark)
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 34px;
+  height: 24px;
 }
 
 /* Hide default HTML checkbox */
@@ -54,21 +56,21 @@ const toggleDark = useToggle(isDark)
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
+  height: 15px;
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: rgb(184, 0, 0);
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: hsl(0, 0%, 0%);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #000000;
 }
 
 input:checked + .slider:before {
