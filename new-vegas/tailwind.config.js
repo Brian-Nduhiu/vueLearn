@@ -8,6 +8,7 @@ module.exports = {
         dancingScript: 'Dancing Script',
         abril: 'Abril Fatface',
         signika: 'Signika',
+        marhey: 'Marhey',
       }
     },
   },

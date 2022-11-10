@@ -7,7 +7,7 @@
     <nav class="flex flex-row justify-between bg-green-900 text-cyan-50 dark:bg-black dark:text-cyan-50 h-20 items-center">
 
       <i class="fa-solid fa-vault ml-10"></i>
-      <p class="font-dancingScript text-3xl">Vegas Casino</p>
+      <p class="font-dancingScript text-3xl">{{logoText}}</p>
       <label  class="switch mr-10">
     <input @click="toggleDark()" type="checkbox">
     <span class="slider round"></span>
@@ -22,10 +22,15 @@
 <script setup>
 import {useDark,useToggle} from '@vueuse/core'
 import UserInput from '@/components/UserInput.vue'
+import { ref } from 'vue';
 
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
+const logoText = ref("Vegas Casino")
+const userInput = ref([])
+const generatedNumbers = ref([])
+
 
 
 </script>
